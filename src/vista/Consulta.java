@@ -216,7 +216,7 @@ public class Consulta extends JFrame {
                     f.setExistencia(false);
                 }
                 if(fd.update(f)){
-                    JOptionPane.showMessageDialog(null, "Filtro modificado con exito");
+                    JOptionPane.showMessageDialog(null, "Producto modificado con exito");
                     limpiarCampos();
                     llenarTabla();
                 }
@@ -248,7 +248,11 @@ public class Consulta extends JFrame {
                 }
                 else{
                     codigo.setText(f.getCodigo());
-                    tipo.setSelectedItem(f.getNombre());
+                    precio.setText(Integer.toString(f.getPrecio()));
+                    cantidad.setText(Integer.toString(f.getStock()));
+                    //disponibilidad.setSelectionEnd();
+                    nombre.setText(f.getNombre());
+                    tipo.setSelectedItem(f.getTipo());
                     stock.setText(Integer.toString(f.getStock()));
                     
                     if(f.getExistencia()){
